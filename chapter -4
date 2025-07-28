@@ -1,0 +1,106 @@
+1. Write a program to Find The Factorial using functions.
+fn factorial(n: u64) -> u64 {
+    if n == 0 || n == 1 {
+        1
+    } else {
+        n * factorial(n - 1)
+    }
+}
+
+fn main() {
+    let num = 5;
+    println!("Factorial of {} is {}", num, factorial(num));
+}
+
+2. Write a function test_divisibility_by_3_4 which will check whether a given integer
+number is divisible by 3 or 4.
+a. If the number is divisible by both return 0
+b. If the number is divisible by 3 only return 1
+c. If the number is divisible by 4 only return 2
+d. If the number is not divisible by both, return -1
+fn test_divisibility_by_3_4(num: i32) -> i32 {
+    let divisible_by_3 = num % 3 == 0;
+    let divisible_by_4 = num % 4 == 0;
+
+    if divisible_by_3 && divisible_by_4 {
+        0
+    } else if divisible_by_3 {
+        1
+    } else if divisible_by_4 {
+        2
+    } else {
+        -1
+    }
+}
+
+fn main() {
+    let number = 12;
+    println!("Result: {}", test_divisibility_by_3_4(number));
+}
+
+3. Write a program to demonstrate the Pass by Value and Pass by Reference
+fn modify_value(mut x: i32) {
+    x = 10;
+    println!("Inside modify_value: x = {}", x);
+}
+
+fn modify_reference(lst: &mut Vec<i32>) {
+    lst.push(4);
+    println!("Inside modify_reference: lst = {:?}", lst);
+}
+
+fn main() {
+    let a = 5;
+    modify_value(a);
+    println!("Outside after modify_value: a = {}", a);  // a remains unchanged
+
+    let mut my_list = vec![1, 2, 3];
+    modify_reference(&mut my_list);
+    println!("Outside after modify_reference: my_list = {:?}", my_list);  // list modified
+}
+
+4. Write a function calculate_area_perimeter() that takes x and y( length and width of a
+rectangle) as a parameter to the function and returns a tuple (area, perimeter).
+fn calculate_area_perimeter(x: u32, y: u32) -> (u32, u32) {
+    let area = x * y;
+    let perimeter = 2 * (x + y);
+    (area, perimeter)
+}
+
+fn main() {
+    let (area, perimeter) = calculate_area_perimeter(5, 3);
+    println!("Area: {}, Perimeter: {}", area, perimeter);
+}
+
+5. Write a function arr_square() that returns the Array of Squares
+fn arr_square(arr: &[i32]) -> Vec<i32> {
+    arr.iter().map(|&x| x * x).collect()
+}
+
+fn main() {
+    let numbers = vec![1, 2, 3, 4];
+    let squares = arr_square(&numbers);
+    println!("Squares: {:?}", squares);
+}
+
+6. write a recursive function fibonacci that takes a positive integer number n as a parameter
+and returns the nth Fibonacci term in that range.
+  fn fibonacci(n: u32) -> u32 {
+    match n {
+        0 => 0,
+        1 => 0,
+        2 => 1,
+        _ => fibonacci(n - 1) + fibonacci(n - 2),
+    }
+}
+
+fn main() {
+    let n = 7;
+    println!("Fibonacci term {} is {}", n, fibonacci(n));
+}
+
+7. Write a program to Creating a String
+fn main() {
+    let my_string = String::from("Hello, UiPath!");
+    println!("{}", my_string);
+}
