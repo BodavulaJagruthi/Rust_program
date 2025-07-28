@@ -287,3 +287,55 @@ fn main() {
         println!("No match found.");
     }
 }
+
+5. Write a program to Print First 10 Natural Numbers using Loop
+fn main() {
+    for i in 1..=10 {
+        println!("{}", i);
+    }
+}
+
+6. Write a program to Multiplication Table using Loop Labels
+fn main() {
+    let number = 5; // You can change the number for a different multiplication table
+    for i in 1..=10 {
+        println!("{} x {} = {}", number, i, number * i);
+    }
+}
+
+7. Write a program to Count Iterations of a Loop Until a Condition
+fn main() {
+    let mut count = 0;
+
+    for i in 1..=10 {
+        count += 1; // Count each iteration
+        println!("Iteration number: {}", count);
+        
+        if count == 5 {
+            println!("Stopping after 5 iterations.");
+            break; // Stop when count reaches 5
+        }
+    }
+}
+
+8. Write a program to Print the following patterns
+&
+&&
+&&&
+&&&&
+&&&&&
+fn main() {
+    for i in 1..=5 {
+        let pattern = "&".repeat(i);
+        println!("{}", pattern);
+    }
+}
+
+9. Write a program to print the values in a collection using iter() method
+fn main() {
+    let collection = vec![1, 2, 3, 4, 5]; // A simple vector for example
+
+    for value in collection.iter() {
+        println!("{}", value);
+    }
+}
